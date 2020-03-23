@@ -1,14 +1,14 @@
-var lastID="";
-var text;
-var id;
-var botName;
-var like;
-var user;
-var created;
+let lastID="";
+let text;
+let id;
+let botName;
+let like;
+let owner;
+let created;
 console.log("-----------made by ex-----------");
 console.log("---지금부터 봇 가동이 시작됩니다--");
 alert("BOT - 실행됨");
-function comment(a){
+const comment = (a) => {
   $.ajax({
     url:"/api/comment",
     dataType:"json",
@@ -21,7 +21,7 @@ function comment(a){
     }
   });
 }
-function write(a,b,c){
+const write = (a,b,c) => {
   $.ajax({
     url:"./api/discuss/",
     type:"POST",
@@ -39,7 +39,7 @@ setInterval(() => {
     text=d.data[0].title;
     id=d.data[0]._id;
     like=d.data[0].likesLength;
-    user=d.data[0].owner;
+    owner=d.data[0].owner;
     created=d.data[0].created;
   })
   if(id != lastID){
@@ -47,7 +47,7 @@ setInterval(() => {
     run();
   }
 },220);
-function run(){
+const run = () => {
   //----------------------여기서부터 코드 시작------------------------------------------------------------------
   botName="기본봇";
   if(text=="핑"){

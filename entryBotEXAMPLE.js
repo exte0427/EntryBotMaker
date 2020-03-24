@@ -57,7 +57,7 @@ function run(){
   if(text=="핑"){
     comment("퐁!");
   }//예제코드
-  //write("제목","내용",free);
+  //write("","제목","free");
   //comment("내용");
   //text 글 제목
   //id 글 아이디

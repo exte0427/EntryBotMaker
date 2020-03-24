@@ -34,6 +34,27 @@ function write(a,b,c){
     }
   });
 }
+function same(stringA,stringB){
+  if(stringB.length>stringA.length){
+    var temp = stringB;
+    stringB=stringA;
+    stringA=temp;
+  }
+  var ao=0;
+  var af=0;
+  ao=stringB.length;
+  af=stringA.length;
+  var count=0;
+  for(var i=0;i<ao;i++){
+    for(var j=0;j<af;j++){
+      if(stringB.charAt(i)==stringA.charAt(j)){
+        count++;
+        break;
+      }
+    }
+  }
+  return (count/af)*100;
+}
 setInterval(() => {
   $.get('https://playentry.org/api/discuss/find?category=free', d => {
     text=d.data[0].title;
@@ -65,4 +86,5 @@ function run(){
   //user 글쓴이
   //created 만들어진 날짜 시간
   //content 글내용
+  //same("비교할 대상","비교할 대상 ") 두 문자열에 같은 정도를 백분율로 표시해 줍니다
 }

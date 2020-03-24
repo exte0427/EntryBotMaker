@@ -40,8 +40,11 @@ setInterval(() => {
     id=d.data[0]._id;
     like=d.data[0].likesLength;
     user=d.data[0].owner;
+    user=user.username;
     created=d.data[0].created;
-    content=d.data[0].content;
+    $.get('https://playentry.org/api/discuss/'+id, d => {
+      content=d.content;
+    })
   })
   if(id != lastID){
     lastID=id;

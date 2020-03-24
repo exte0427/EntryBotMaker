@@ -41,6 +41,7 @@ setInterval(() => {
     like=d.data[0].likesLength;
     user=d.data[0].owner;
     created=d.data[0].created;
+    content=d.data[0].content;
   })
   if(id != lastID){
     lastID=id;
@@ -60,4 +61,5 @@ function run(){
   //like 글 좋아요 수
   //user 글쓴이
   //created 만들어진 날짜 시간
+  //content 글내용
 }
